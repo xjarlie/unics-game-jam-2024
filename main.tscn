@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://6mppwspy2rgd"]
 
-[ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_dl1kg"]
 [ext_resource type="Script" path="res://main.gd" id="1_q55qo"]
-[ext_resource type="PackedScene" uid="uid://c3kpacfuqviie" path="res://player.tscn" id="3_ioyrw"]
+[ext_resource type="PackedScene" uid="uid://3nfto6o0eb2t" path="res://player.tscn" id="3_ioyrw"]
+[ext_resource type="PackedScene" uid="uid://ccxyui6m2mcjo" path="res://priest-melee.tscn" id="3_p5y7f"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_q55qo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-74, -72)
-texture = ExtResource("1_dl1kg")
-
 [node name="Player" parent="." instance=ExtResource("3_ioyrw")]
+
+[node name="Node2D" parent="." instance=ExtResource("3_p5y7f")]
+position = Vector2(248, -148)
 
 [connection signal="death" from="Player" to="." method="_on_player_death"]
