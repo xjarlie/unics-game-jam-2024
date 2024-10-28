@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6mppwspy2rgd"]
+[gd_scene load_steps=5 format=3 uid="uid://6mppwspy2rgd"]
 
+[ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_dl1kg"]
 [ext_resource type="Script" path="res://main.gd" id="1_q55qo"]
 [ext_resource type="PackedScene" uid="uid://c3kpacfuqviie" path="res://player.tscn" id="3_ioyrw"]
+[ext_resource type="PackedScene" uid="uid://b20mccbo2d53d" path="res://ranger.tscn" id="4_84nri"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_q55qo")
@@ -11,5 +13,8 @@ position = Vector2(-74, -72)
 texture = ExtResource("1_dl1kg")
 
 [node name="Player" parent="." instance=ExtResource("3_ioyrw")]
+
+[node name="RangerBody" parent="." instance=ExtResource("4_84nri")]
+position = Vector2(-101, 123)
 
 [connection signal="death" from="Player" to="." method="_on_player_death"]

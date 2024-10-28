@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2bly1cl34gi1"]
+[gd_scene load_steps=4 format=3 uid="uid://d2bly1cl34gi1"]
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_me2la"]
+[ext_resource type="Script" path="res://projectile.gd" id="1_r1dea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orfmk"]
 size = Vector2(128, 127)
 
 [node name="Projectile" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_r1dea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_me2la")
