@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_auiv7"]
 [ext_resource type="Script" path="res://priest_melee.gd" id="1_i0rww"]
-[ext_resource type="Texture2D" uid="uid://b6vsrjdpudtug" path="res://sword.png" id="3_d8nj4"]
+[ext_resource type="Texture2D" uid="uid://dmat0f662k4oy" path="res://sword-anim.png" id="3_jhymc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj6od"]
 size = Vector2(126, 128)
@@ -60,6 +60,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D/CollisionShape2D/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_q6ahe"]
 resource_name = "spear-stab"
@@ -71,7 +83,7 @@ tracks/0/path = NodePath("Area2D/CollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.533333, 0.833333, 1.23333, 1.43333),
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.833333, 1.23333, 1.43333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-18, 0), Vector2(-63, 0), Vector2(133, 0), Vector2(133, 0), Vector2(-18, 0), Vector2(-18, 0)]
@@ -112,6 +124,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D/CollisionShape2D/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.466667, 0.533333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4li7t"]
 _data = {
@@ -139,9 +163,11 @@ shape = SubResource("RectangleShape2D_lc3fk")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
-position = Vector2(0, 1)
+position = Vector2(9, 2)
 rotation = 3.14159
-texture = ExtResource("3_d8nj4")
+scale = Vector2(2.08698, 2.08698)
+texture = ExtResource("3_jhymc")
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
