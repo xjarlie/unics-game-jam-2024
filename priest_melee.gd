@@ -3,6 +3,7 @@ extends CharacterBody2D
 var player
 
 @export var health = 100
+@export var turning = true
 
 const SPEED = 300.0
 var direction = Vector2(1, 0)
@@ -14,7 +15,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 	#move_and_slide()
-	rotate_attack(player.position)
+	
+	if turning:
+		rotate_attack(player.position)
 	
 func _process(delta: float) -> void:
 	if not $AnimationPlayer.is_playing():
