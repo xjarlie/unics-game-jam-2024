@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ft7nb7r8hl8b"]
+
+[ext_resource type="Texture2D" uid="uid://qg66012nwyiv" path="res://cross-top.png" id="1_3jwnk"]
+[ext_resource type="Texture2D" uid="uid://d2h8s7q8iqj3o" path="res://holy-water.png" id="2_rifge"]
+[ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="3_1dw11"]
+
+[node name="Node2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_1dw11")
+
+[node name="Holy-water" type="Sprite2D" parent="."]
+position = Vector2(47, 13)
+scale = Vector2(2.01875, 2.01875)
+texture = ExtResource("2_rifge")
+
+[node name="Cross-top" type="Sprite2D" parent="Holy-water"]
+position = Vector2(-0.217391, -4.13043)
+rotation = -0.506681
+scale = Vector2(1.1481, 1.1481)
+texture = ExtResource("1_3jwnk")
