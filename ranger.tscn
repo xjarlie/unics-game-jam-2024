@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b20mccbo2d53d"]
+
+[ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_3q6nj"]
+[ext_resource type="Script" path="res://rangerMainScript.gd" id="1_u2p6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpatt"]
+size = Vector2(128, 128)
+
+[node name="RangerBody" type="CharacterBody2D"]
+script = ExtResource("1_u2p6o")
+
+[node name="RangerSprite" type="Sprite2D" parent="."]
+position = Vector2(-74, -72)
+texture = ExtResource("1_3q6nj")
+
+[node name="RangerHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-73, -72)
+shape = SubResource("RectangleShape2D_xpatt")
