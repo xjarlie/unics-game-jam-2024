@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://6mppwspy2rgd"]
+[gd_scene load_steps=4 format=3 uid="uid://6mppwspy2rgd"]
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_dl1kg"]
 [ext_resource type="Script" path="res://main.gd" id="1_q55qo"]
+[ext_resource type="PackedScene" uid="uid://c3kpacfuqviie" path="res://player.tscn" id="3_ioyrw"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_q55qo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-74, -72)
 texture = ExtResource("1_dl1kg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("3_ioyrw")]
