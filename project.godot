@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="UniCS Game Jam 2024"
 
+[global_group]
+
+player="only contains player"
+
 [input]
 
 ui_left={
