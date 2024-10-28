@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func beginGame() -> void:
 	print("hello world");
-	print("hola mundo");
+	$Player.begin()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
