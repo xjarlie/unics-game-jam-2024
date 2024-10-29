@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://di4xjaokdpgcy"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_kde8f"]
+[ext_resource type="Theme" uid="uid://binjj8i7st8b5" path="res://MenuButtonTheme.tres" id="2_je5xe"]
+[ext_resource type="Theme" uid="uid://uv6byf20wbun" path="res://MenuLabelTheme.tres" id="3_fcahx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ty36u"]
+size = Vector2(300, 40)
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_kde8f")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_right = 300.0
+offset_bottom = 40.0
+texture_progress = SubResource("PlaceholderTexture2D_ty36u")
+
+[node name="PauseButton" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = -3.0
+offset_right = 62.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme = ExtResource("2_je5xe")
+text = "Pause"
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+offset_left = -75.0
+offset_top = -53.0
+offset_right = 1208.0
+offset_bottom = 723.0
+color = Color(0, 0, 0, 0.713726)
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -101.0
+offset_right = 61.0
+offset_bottom = -51.0
+theme = ExtResource("2_je5xe")
+text = "RESUME"
+
+[node name="RestartButton" type="Button" parent="PauseMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.473
+anchor_right = 0.5
+anchor_bottom = 0.473
+offset_left = -61.0
+offset_top = -23.504
+offset_right = 64.0
+offset_bottom = 23.496
+theme = ExtResource("2_je5xe")
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = 16.0
+offset_right = 33.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_je5xe")
+text = "QUIT
+"
+
+[node name="PausedLabel" type="Label" parent="PauseMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -180.0
+offset_right = 97.0
+offset_bottom = -113.0
+theme = ExtResource("3_fcahx")
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathMenu" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="DeathMenu"]
+offset_left = -75.0
+offset_top = -53.0
+offset_right = 1208.0
+offset_bottom = 723.0
+color = Color(0, 0, 0, 0.713726)
+
+[node name="DeadLabel" type="Label" parent="DeathMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -180.0
+offset_right = 72.0
+offset_bottom = -113.0
+theme = ExtResource("3_fcahx")
+text = "DEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="DeathMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.473
+anchor_right = 0.5
+anchor_bottom = 0.473
+offset_left = -58.0
+offset_top = -74.504
+offset_right = 67.0
+offset_bottom = -27.504
+theme = ExtResource("2_je5xe")
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="DeathMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -28.0
+offset_right = 37.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_je5xe")
+text = "QUIT
+"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="DeathMenu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="DeathMenu/QuitButton" to="." method="_on_quit_button_pressed"]
