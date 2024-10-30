@@ -23,8 +23,18 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("spear-stab")
+		on_hit_by_player(5)
 
 func on_hit_by_player(damage):
+	$damage.text = str(damage)
+	$damage/AnimationPlayer.play("damage-number")
+	
+	var dam_dir = randf_range(0, 2*PI)
+	var dam_len = randf_range(0, 75)
+	$damage.position = $damage.position.length() * Vector2.RIGHT.rotated(dam_dir)
+	
+	
+	
 	health -= damage
 	
 	if health <= 0:

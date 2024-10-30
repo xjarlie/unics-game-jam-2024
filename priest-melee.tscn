@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy768pvao65go"]
+[gd_scene load_steps=12 format=3 uid="uid://dy768pvao65go"]
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_auiv7"]
 [ext_resource type="Script" path="res://priest_melee.gd" id="1_i0rww"]
@@ -9,6 +9,90 @@ size = Vector2(126, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc3fk"]
 size = Vector2(126, 20)
+
+[sub_resource type="Animation" id="Animation_2a0jq"]
+resource_name = "damage-number"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8viey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47wsq"]
+_data = {
+"RESET": SubResource("Animation_8viey"),
+"damage-number": SubResource("Animation_2a0jq")
+}
 
 [sub_resource type="Animation" id="Animation_3i2rd"]
 length = 0.001
@@ -71,6 +155,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("damage:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_q6ahe"]
@@ -168,6 +264,22 @@ rotation = 3.14159
 scale = Vector2(2.08698, 2.08698)
 texture = ExtResource("3_jhymc")
 hframes = 4
+
+[node name="damage" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 64.0
+offset_top = -85.0
+offset_right = 111.0
+offset_bottom = -30.0
+pivot_offset = Vector2(24, 27)
+theme_override_colors/default_color = Color(0.954458, 2.11775e-06, 9.62615e-07, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "50"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="damage"]
+libraries = {
+"": SubResource("AnimationLibrary_47wsq")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
