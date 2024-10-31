@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccxyui6m2mcjo"]
+[gd_scene load_steps=9 format=3 uid="uid://dy768pvao65go"]
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_auiv7"]
 [ext_resource type="Script" path="res://priest_melee.gd" id="1_i0rww"]
