@@ -20,9 +20,9 @@ func pause():
 
 func _on_player_death() -> void:
 	print("main: oh no player dead")
+	signal_bus.game_over.emit()
 	$UI.on_player_death()
-	
-
 
 func _on_ui_pause() -> void:
+	signal_bus.pause.emit()
 	pause()
