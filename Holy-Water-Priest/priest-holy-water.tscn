@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ft7nb7r8hl8b"]
 
-[ext_resource type="Texture2D" uid="uid://qg66012nwyiv" path="res://cross-top.png" id="1_3jwnk"]
-[ext_resource type="Texture2D" uid="uid://d2h8s7q8iqj3o" path="res://holy-water.png" id="2_rifge"]
+[ext_resource type="Texture2D" uid="uid://qg66012nwyiv" path="res://Holy-Water-Priest/cross-top.png" id="1_3jwnk"]
+[ext_resource type="Texture2D" uid="uid://d2h8s7q8iqj3o" path="res://Holy-Water-Priest/holy-water.png" id="2_rifge"]
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="3_1dw11"]
 
 [node name="Node2D" type="CharacterBody2D"]

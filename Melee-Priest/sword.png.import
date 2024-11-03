@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmat0f662k4oy"
-path="res://.godot/imported/sword-anim.png-0f7a4b0f386fbf30f30cf8a4a08337c4.ctex"
+uid="uid://b6vsrjdpudtug"
+path="res://.godot/imported/sword.png-48ccdece1eb4a5de2b785afcfab547d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sword-anim.png"
-dest_files=["res://.godot/imported/sword-anim.png-0f7a4b0f386fbf30f30cf8a4a08337c4.ctex"]
+source_file="res://Melee-Priest/sword.png"
+dest_files=["res://.godot/imported/sword.png-48ccdece1eb4a5de2b785afcfab547d6.ctex"]
 
 [params]
 
