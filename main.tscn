@@ -20,3 +20,4 @@ position = Vector2(248, -148)
 
 [connection signal="death" from="Player" to="." method="_on_player_death"]
 [connection signal="pause" from="UI" to="." method="_on_ui_pause"]
+[connection signal="unpause" from="UI" to="." method="_on_ui_unpause"]
