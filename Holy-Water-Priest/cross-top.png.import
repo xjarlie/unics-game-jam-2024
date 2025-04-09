@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2h8s7q8iqj3o"
-path="res://.godot/imported/holy-water.png-0e2813614c025351fa44f8db4e72c741.ctex"
+uid="uid://qg66012nwyiv"
+path="res://.godot/imported/cross-top.png-00f8042245deff9edec6953c5c881d1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://holy-water.png"
-dest_files=["res://.godot/imported/holy-water.png-0e2813614c025351fa44f8db4e72c741.ctex"]
+source_file="res://Holy-Water-Priest/cross-top.png"
+dest_files=["res://.godot/imported/cross-top.png-00f8042245deff9edec6953c5c881d1b.ctex"]
 
 [params]
 

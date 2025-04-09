@@ -39,7 +39,7 @@ offset_bottom = 723.0
 color = Color(0, 0, 0, 0.713726)
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -81,7 +81,7 @@ text = "QUIT
 "
 
 [node name="PausedLabel" type="Label" parent="PauseMenu"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -105,7 +105,7 @@ offset_bottom = 723.0
 color = Color(0, 0, 0, 0.713726)
 
 [node name="DeadLabel" type="Label" parent="DeathMenu"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

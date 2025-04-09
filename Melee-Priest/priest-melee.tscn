@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dy768pvao65go"]
 
 [ext_resource type="Texture2D" uid="uid://b5dkrekk6d6y0" path="res://icon.svg" id="1_auiv7"]
-[ext_resource type="Script" path="res://priest_melee.gd" id="1_i0rww"]
-[ext_resource type="Texture2D" uid="uid://dmat0f662k4oy" path="res://sword-anim.png" id="3_jhymc"]
+[ext_resource type="Script" path="res://Melee-Priest/priest_melee.gd" id="1_i0rww"]
+[ext_resource type="Texture2D" uid="uid://dmat0f662k4oy" path="res://Melee-Priest/sword-anim.png" id="3_jhymc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj6od"]
 size = Vector2(126, 128)
@@ -70,7 +70,7 @@ tracks/1/path = NodePath(".:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
+"times": PackedFloat32Array(0, 0.133333, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -82,10 +82,10 @@ tracks/2/path = NodePath(".:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(1, 1), Vector2(1, 1)]
+"values": [Vector2(0.1, 0.1), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_47wsq"]
@@ -239,7 +239,7 @@ _data = {
 "spear-stab": SubResource("Animation_q6ahe")
 }
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Melee Enemy" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_i0rww")
 

@@ -10,7 +10,6 @@ func beginGame() -> void:
 	$Player.begin()
 	$UI.update_health($Player.health)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$UI.update_health($Player.health)
@@ -20,9 +19,12 @@ func pause():
 
 func _on_player_death() -> void:
 	print("main: oh no player dead")
+	signal_bus.game_over.emit()
 	$UI.on_player_death()
-	
-
 
 func _on_ui_pause() -> void:
+	signal_bus.pause.emit()
 	pause()
+
+func _on_ui_unpause() -> void:
+	signal_bus.unpause.emit()
